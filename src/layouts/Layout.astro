@@ -34,7 +34,7 @@ import Footer from '@/components/Footer.astro';
     <title>{title}</title>
   </head>
   <body class="font-poppins">
-    <Header client:media="(min-width: 20rem)" />
+    <Header client:visible />
     <slot />
     <Footer />
   </body>

@@ -142,7 +142,3 @@ export const clientStoriesData: ClientStory[] = [
     ],
   },
 ];
-
-export function getClientStory(slug: string): ClientStory | undefined {
-  return clientStoriesData.find((story) => story.slug === slug);
-}

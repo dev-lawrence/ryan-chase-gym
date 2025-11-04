@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import HeroTwo from '@/assets/hero.png';
 
 import { Image } from 'astro:assets';
+import { Star } from 'lucide-react';
 
 const testimonials = [
   {
@@ -35,10 +36,12 @@ const testimonials = [
         <p class="text-xl">
           Personal training and online coaching for sustainable results
         </p>
+
         <div class="flex gap-4 pt-4 flex-wrap">
           <Button className="w-full md:w-fit" size={'lg'}>
             <a href="#contact">Book Consultation</a>
           </Button>
+
           <Button className="w-full md:w-fit" variant="outline" size={'lg'}>
             <a href="#services">View Services</a>
           </Button>
@@ -86,7 +89,7 @@ const testimonials = [
         >
           <div class="flex gap-1 mb-4">
             {[...Array(5)].map(() => (
-              <span class="text-primary">★</span>
+              <Star className="text-primary fill-primary" />
             ))}
           </div>
           <p class=" mb-4">"{testimonial.text}"</p>

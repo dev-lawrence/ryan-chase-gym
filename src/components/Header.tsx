@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 import Nav from '@/components/Nav';
 import { AlignLeft, X } from 'lucide-react';
 
-interface HeaderProps {
-  isBlogDetailsPage?: boolean;
-}
-
-const Header = ({ isBlogDetailsPage }: HeaderProps) => {
+const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
@@ -34,13 +30,6 @@ const Header = ({ isBlogDetailsPage }: HeaderProps) => {
     };
   }, []);
 
-  const linkColorClass =
-    isBlogDetailsPage && !scrolling
-      ? 'text-white'
-      : scrolling
-      ? 'text-foreground'
-      : 'text-foreground dark:text-white';
-
   return (
     <header
       className={`${
@@ -58,17 +47,12 @@ const Header = ({ isBlogDetailsPage }: HeaderProps) => {
         </div>
 
         {/* Navbar */}
-        <Nav
-          scrolling={scrolling}
-          isClicked={isClicked}
-          toggleNavClick={toggleNavClick}
-          isBlogDetailsPage={isBlogDetailsPage}
-        />
+        <Nav isClicked={isClicked} toggleNavClick={toggleNavClick} />
 
         <div className="z-10 flex items-center gap-4 md:hidden">
           {/* Menu buttons */}
           <div
-            className={`${linkColorClass} ml-4 inline-block md:hidden`}
+            className={` ml-4 inline-block md:hidden`}
             onClick={toggleNavClick}
           >
             {isClicked ? (
